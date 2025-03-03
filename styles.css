@@ -1,0 +1,324 @@
+    /* General Styling */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      overflow: hidden; /* Disable scrolling initially */
+    }
+
+
+    /* First Page Styling */
+    #first-page {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      height: 100vh;
+      background-image: url('images/cover-01.png');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      border: none;
+      text-align: center;
+    }
+    .logo {
+      width: 100%; /* Fixed width */
+      max-width: 300px;
+      height: auto; /* Fixed height */
+      overflow: hidden; /* Prevent overflow */
+      border-radius: 10px; /* Optional: Add rounded corners */
+    }
+    
+    .logo img {
+      width: 100%; /* Fill the container's width */
+      height: 100%; /* Fill the container's height */
+      object-fit: cover; /* Ensures the image covers the container */
+      display: block; /* Removes extra space below the image */
+    }
+    .welcome_text {
+      width: 100%; /* Fixed width */
+      max-width: 300px;
+      overflow: hidden; /* Prevent overflow */
+      border-radius: 10px; /* Optional: Add rounded corners */
+    }
+    
+    .welcome_text img {
+      width: 100%; /* Fill the container's width */
+      height: 100%; /* Fill the container's height */
+      object-fit: cover; /* Ensures the image covers the container */
+      display: block; /* Removes extra space below the image */
+    }
+    .button-container {
+      width: 100%;
+      max-width: 300px; /* Optional: Limit width for larger screens */
+      margin: 0 auto; /* Center the container */
+    }
+    
+    .image-button-bg {
+      width: 100%;
+      height: auto;
+      padding-top: 33.33%; /* Aspect ratio (3:1) */
+      background-image: url('images/open_btn.png');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+      background-color: transparent; 
+    }
+    .appointment_btn {
+      width: 100%;
+      height: auto;
+      padding-top: 80%; /* Aspect ratio (3:1) */
+      background-image: url('images/appointment_btn.png');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+      background-color: transparent; 
+    }
+    .map_btn{
+      width: 100%;
+      height: auto;
+      padding-top: 33.33%; /* Aspect ratio (3:1) */
+      background-image: url('images/map_btn.png');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+      background-color: transparent; 
+    }
+    .payment_btn{
+      width: 100%;
+      height: auto;
+      padding-top: 33.33%; /* Aspect ratio (3:1) */
+      background-image: url('images/payment_btn.png');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+      background-color: transparent; 
+      margin-bottom: 50px;
+    }
+    
+    .image-button-bg:hover {
+      transform: scale(1.1);
+    }
+    
+    .image-button-bg:active {
+      transform: scale(0.95);
+    }
+    
+    /* Responsive adjustments for small screens */
+    @media (max-width: 375px) {
+      .image-button-bg {
+        padding-top: 40%; /* Adjust aspect ratio for smaller screens */
+      }
+    }
+
+    /* Pop-up Page Styling */
+    #popup-page {
+      display: none;
+      position: relative; /* Needed for full-screen image */
+      width: 100vw; /* Full viewport width */
+      height: 100vh; /* Full viewport height */
+      overflow: hidden; /* Prevent scrolling */
+    }
+
+    /* Image Styling */
+    #popup-page img {
+      position: absolute; /* Position the image absolutely within the pop-up */
+      top: 50%; /* Center vertically */
+      left: 50%; /* Center horizontally */
+      transform: translate(-50%, -50%); /* Adjust for exact centering */
+      width: 100vw; /* Full viewport width */
+      height: 100vh; /* Full viewport height */
+      object-fit: cover; /* Cover the entire screen without distortion */
+    }
+
+    /* Scrollable Page Styling */
+    #scrollable-page {
+      display: none;
+      height: 100vh; /* Make it scrollable */
+      background: linear-gradient(to bottom, #ffffff, #e0e0e0);
+      overflow-y: auto; /* Enable scrolling */
+      padding-bottom: 20px;
+    }
+    #scrollable-page .full-width-image {
+      width: 100%; /* Fill the container's width */
+      height: auto; /* Maintain aspect ratio */
+      object-fit: cover; /* Ensures the image covers the container */
+      display: block; /* Removes extra space below the image */
+    }
+/* Images Section */
+.images {
+  width: 100%;
+  max-width: 430px; /* Matches the opening section width */
+  margin: 20px auto; /* Adds spacing above and below */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Gallery Container */
+.gallery {
+  max-width: 800px; /* Adjust as needed */
+  margin: 0 auto; /* Center the gallery */
+  padding: 20px; /* Add padding around the gallery */
+  box-sizing: border-box;
+}
+
+/* Row Styling */
+.row {
+  display: flex;
+  justify-content: center; /* Center images horizontally */
+  gap: 10px; /* Space between images in the same row */
+  margin-bottom: 20px; /* Space between rows */
+}
+
+
+/* Large Image Styling (Single Image per Row) */
+.large-image {
+  width: 100%; /* Full width of the row */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  object-fit: cover; /* Ensures the image fills the container without distortion */
+}
+
+.large-image:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Small Image Styling (Two Images per Row) */
+.small-image {
+  width: calc(50% - 5px); /* Two images per row with spacing */
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  object-fit: cover; /* Ensures images fill the container without distortion */
+}
+
+.small-image:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Lightbox Modal */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox.hidden {
+  display: none; /* Hides the lightbox */
+}
+
+#lightbox-image {
+  max-width: 90%; /* Ensures the image fits within the viewport */
+  max-height: 90%; /* Prevents the image from overflowing vertically */
+  border-radius: 10px;
+  object-fit: contain; /* Ensures the image scales proportionally */
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.prev-btn, .next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.prev-btn {
+  left: 20px;
+}
+
+.next-btn {
+  right: 20px;
+}
+
+.prev-btn:hover, .next-btn:hover {
+  transform: scale(1.05);
+}
+.payment_title{
+  padding: 10%;
+}
+/* Footer Buttons */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 430px;
+  background-color: transparent;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-around; /* Evenly spaces buttons */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  margin-top: 50px;
+}
+
+
+
+/* Appointment Button */
+.appointment-btn {
+  padding: 5px; /* Add minimal padding around the button */
+  border-radius: 5px; /* Optional: Adds rounded corners */
+  overflow: hidden; /* Ensures content doesn't overflow */
+}
+
+.appointment-img {
+  max-width: 100%; /* Ensures the image fits within the button */
+  height: auto; /* Maintains aspect ratio */
+  padding: 5%;
+}
+
+/* Footer Buttons */
+.action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px; /* Space between icon and text */
+  padding: 8px; /* Minimal padding for better sizing */
+  font-size: 0.8rem; /* Smaller font size for text */
+  color: #333;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.action-btn i {
+  font-size: 1.2rem; /* Adjust icon size to fit the button */
+  color: #cca432; /* Icon color */
+}
+
+.action-btn:hover {
+  background-color: #f0f0f0; /* Light background on hover */
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website with Pop-up</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+  <!-- First Page -->
+  <div id="first-page">
+    <div class="logo">
+      <img src="images/logo.png" alt="">
+    </div>
+    <div class="welcome_text">
+      <img src="images/welcome_text.png" alt="">
+    </div>
+    <div class="button-container">
+      <button id="start-button" class="image-button-bg"></button>
+    </div>
+  </div>
+
+  <!-- Pop-up Page -->
+  <div id="popup-page">
+    <img src="images/opening_img.jpg" alt="">
+  </div>
+
+  <!-- Scrollable Page -->
+  <div id="scrollable-page">
+    <div class="invite_text">
+      <img src="images/invite_text.png" alt="" class="full-width-image">
+    </div>
+    <div class="button-container">
+      <div class="appointment_btn"></div>
+    </div>
+    <div class="invite_text">
+      <img src="images/invite_text_eng.png" alt="" class="full-width-image">
+    </div>
+    <div class="map">
+      <div class="button-container">
+        <button id="start-button" class="map_btn"></button>
+      </div>
+      <img src="images/qr_map.png" alt="" class="full-width-image">
+    </div>
+    <!-- Gallery -->
+    <div class="images">
+      <!-- Image Gallery -->
+      <div class="gallery">
+        <!-- First Row: Single Large Image -->
+        <div class="row">
+          <img src="images/images1.png" alt="Gallery Image 1" class="large-image" onclick="openLightbox(0)">
+        </div>
+
+        <!-- Second Row: Two Smaller Images -->
+        <div class="row">
+          <img src="images/images2.png" alt="Gallery Image 2" class="small-image" onclick="openLightbox(1)">
+          <img src="images/images3.png" alt="Gallery Image 3" class="small-image" onclick="openLightbox(2)">
+        </div>
+
+        <!-- Third Row: Single Large Image -->
+        <div class="row">
+          <img src="images/images4.png" alt="Gallery Image 4" class="large-image" onclick="openLightbox(3)">
+        </div>
+      </div>
+
+      <!-- Lightbox Modal -->
+      <div id="lightbox" class="lightbox hidden">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <button class="prev-btn" onclick="changeImage(-1)">&#10094;</button>
+        <button class="next-btn" onclick="changeImage(1)">&#10095;</button>
+        <img src="" alt="Enlarged Image" id="lightbox-image">
+      </div>
+    </div>
+    <div class="payment">
+      <div class="payment_title">
+        <img src="images/payment.png" alt="" class="full-width-image">
+      </div>
+      <div class="button-container">
+        <button id="start-button" class="payment_btn"></button>
+      </div>
+
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <button class="action-btn" onclick="openLocation()">
+        <i class="fa-solid fa-location-dot"></i>
+      </button>
+      <button class="action-btn" onclick="addToCalendar()">
+        <i class="fa-solid fa-calendar-days"></i>
+      </button>
+      <button class="action-btn" onclick="viewImage()">
+        <i class="fa-solid fa-images"></i>
+      </button>
+    </footer>
+  </div>
+
+
+
+
+  <script>
+    // JavaScript Logic
+    const firstPage = document.getElementById('first-page');
+    const popupPage = document.getElementById('popup-page');
+    const scrollablePage = document.getElementById('scrollable-page');
+
+    document.getElementById('start-button').addEventListener('click', () => {
+      // Hide the first page
+      firstPage.style.display = 'none';
+
+      // Show the pop-up page
+      popupPage.style.display = 'flex';
+
+      // After 3 seconds, hide the pop-up page and show the scrollable page
+      setTimeout(() => {
+        popupPage.style.display = 'none';
+        scrollablePage.style.display = 'block';
+      }, 1000); // 1000ms = 1 seconds
+    });
+    // Image Array
+    const images = [
+      "images/images1.png",
+      "images/images2.png",
+      "images/images3.png",
+      "images/images4.png"
+    ];
+
+    let currentIndex = 0;
+
+    // Open Lightbox
+    function openLightbox(index) {
+      currentIndex = index;
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImage = document.getElementById("lightbox-image");
+
+      lightboxImage.src = images[currentIndex];
+      lightbox.classList.remove("hidden");
+    }
+
+    // Close Lightbox
+    function closeLightbox() {
+      const lightbox = document.getElementById("lightbox");
+      lightbox.classList.add("hidden");
+    }
+
+    // Change Image
+    function changeImage(step) {
+      currentIndex += step;
+
+      // Ensure currentIndex stays within bounds
+      if (currentIndex < 0) {
+        currentIndex = images.length - 1;
+      } else if (currentIndex >= images.length) {
+        currentIndex = 0;
+      }
+
+      const lightboxImage = document.getElementById("lightbox-image");
+      lightboxImage.src = images[currentIndex];
+    }
+  </script>
+
+</body>
+
+</html>
