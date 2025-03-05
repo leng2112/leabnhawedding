@@ -3,8 +3,14 @@
       margin: 0;
       font-family: Arial, sans-serif;
       overflow: hidden; /* Disable scrolling initially */
+      width: 375px; /* Set the width to match the mobile viewport */
+      margin: 0 auto; /* Center the content horizontally */
+      overflow-x: hidden; /* Prevent horizontal scrolling */
     }
-
+    
+    html {
+      overflow-y: auto; /* Allow vertical scrolling if needed */
+    }
 
     /* First Page Styling */
     #first-page {
@@ -111,6 +117,21 @@
     }
     
     .image-button-bg:active {
+      transform: scale(0.95);
+    }
+
+    .appointment_btn:hover {
+      transform: scale(1.1);
+    }
+    
+    .appointment_btn:active {
+      transform: scale(0.95);
+    }
+    .map_btn:hover {
+      transform: scale(1.1);
+    }
+    
+    .map_btn:active {
       transform: scale(0.95);
     }
     
@@ -273,7 +294,7 @@
 .footer {
   position: fixed;
   bottom: 0;
-  width: 430px;
+  width: 375px;
   background-color: transparent;
   padding: 10px 0;
   display: flex;
@@ -320,4 +341,7 @@
 
 .action-btn:hover {
   background-color: #f0f0f0; /* Light background on hover */
+}
+.map {
+  padding: 10%;
 }
