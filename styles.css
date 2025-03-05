@@ -58,7 +58,7 @@
       margin: 0 auto; /* Center the container */
     }
     
-    .image-button-bg {
+    .open_btn {
       width: 100%;
       height: auto;
       padding-top: 33.33%; /* Aspect ratio (3:1) */
@@ -70,6 +70,18 @@
       cursor: pointer;
       transition: transform 0.3s ease-in-out;
       background-color: transparent; 
+      animation: pulse 1.5s infinite ease-in-out;
+    }
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
     }
     .appointment_btn {
       width: 100%;
@@ -166,9 +178,14 @@
     #scrollable-page {
       display: none;
       height: 100vh; /* Make it scrollable */
-      background: linear-gradient(to bottom, #ffffff, #e0e0e0);
+      background-image: url('images/cover2.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border: none;
       overflow-y: auto; /* Enable scrolling */
       padding-bottom: 20px;
+
     }
     #scrollable-page .full-width-image {
       width: 100%; /* Fill the container's width */
@@ -176,6 +193,24 @@
       object-fit: cover; /* Ensures the image covers the container */
       display: block; /* Removes extra space below the image */
     }
+/* Smooth Zoom-In Animation */
+.zoom-in {
+  opacity: 0; /* Start invisible */
+  transform: scale(0.5); /* Start at a much smaller size */
+  animation: zoomIn 0.5s ease-in-out forwards; /* Adjust duration and timing function */
+}
+
+/* Keyframes for the Zoom-In Animation */
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8); /* Start very small */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1); /* End at normal size */
+  }
+}
 /* Images Section */
 .images {
   width: 100%;
@@ -299,7 +334,6 @@
   padding: 10px 0;
   display: flex;
   justify-content: space-around; /* Evenly spaces buttons */
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
   margin-top: 50px;
 }
 
