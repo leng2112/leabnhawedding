@@ -85,6 +85,45 @@
         transform: scale(0.97);
       }
     }
+    /* Pop-up Page Styling */
+    #popup-page {
+      display: none;
+      position: relative; /* Needed for full-screen image */
+      width: 100vw; /* Full viewport width */
+      height: 100vh; /* Full viewport height */
+      overflow: hidden; /* Prevent scrolling */
+    }
+
+    /* Image Styling */
+    #popup-page img {
+      position: absolute; /* Position the image absolutely within the pop-up */
+      top: 50%; /* Center vertically */
+      left: 50%; /* Center horizontally */
+      transform: translate(-50%, -50%); /* Adjust for exact centering */
+      width: 100vw; /* Full viewport width */
+      height: 100vh; /* Full viewport height */
+      object-fit: cover; /* Cover the entire screen without distortion */
+    }
+    /* Pop-up Page Styling */
+    #popup-page {
+      display: none;
+      position: relative; /* Needed for full-screen image */
+      width: 100vw; /* Full viewport width */
+      height: 100vh; /* Full viewport height */
+      overflow: hidden; /* Prevent scrolling */
+    }
+
+    /* Image Styling */
+    #popup-page img {
+      position: absolute; /* Position the image absolutely within the pop-up */
+      top: 50%; /* Center vertically */
+      left: 50%; /* Center horizontally */
+      transform: translate(-50%, -50%); /* Adjust for exact centering */
+      width: 100vw; /* Full viewport width */
+      height: 100vh; /* Full viewport height */
+      object-fit: cover; /* Cover the entire screen without distortion */
+    }
+
     .appointment_btn {
       width: 100%;
       height: auto;
@@ -98,6 +137,19 @@
       transition: transform 0.3s ease-in-out;
       background-color: transparent; 
     }
+        /* Appointment Button */
+    .appointment-btn {
+      padding: 5px; /* Add minimal padding around the button */
+      border-radius: 5px; /* Optional: Adds rounded corners */
+      overflow: hidden; /* Ensures content doesn't overflow */
+    }
+
+    .appointment-img {
+      max-width: 100%; /* Ensures the image fits within the button */
+      height: auto; /* Maintains aspect ratio */
+      padding: 5%;
+    }
+    
     .map_btn{
       width: 100%;
       height: auto;
@@ -148,33 +200,6 @@
     .map_btn:active {
       transform: scale(0.95);
     }
-    
-    /* Responsive adjustments for small screens */
-    @media (max-width: 375px) {
-      .image-button-bg {
-        padding-top: 40%; /* Adjust aspect ratio for smaller screens */
-      }
-    }
-
-    /* Pop-up Page Styling */
-    #popup-page {
-      display: none;
-      position: relative; /* Needed for full-screen image */
-      width: 100vw; /* Full viewport width */
-      height: 100vh; /* Full viewport height */
-      overflow: hidden; /* Prevent scrolling */
-    }
-
-    /* Image Styling */
-    #popup-page img {
-      position: absolute; /* Position the image absolutely within the pop-up */
-      top: 50%; /* Center vertically */
-      left: 50%; /* Center horizontally */
-      transform: translate(-50%, -50%); /* Adjust for exact centering */
-      width: 100vw; /* Full viewport width */
-      height: 100vh; /* Full viewport height */
-      object-fit: cover; /* Cover the entire screen without distortion */
-    }
 
     /* Scrollable Page Styling */
     #scrollable-page {
@@ -195,189 +220,174 @@
       object-fit: cover; /* Ensures the image covers the container */
       display: block; /* Removes extra space below the image */
     }
-/* Smooth Zoom-In Animation */
-.zoom-in {
-  opacity: 0; /* Start invisible */
-  transform: scale(0.5); /* Start at a much smaller size */
-  animation: zoomIn 0.5s ease-in-out forwards; /* Adjust duration and timing function */
-}
-
-/* Keyframes for the Zoom-In Animation */
-@keyframes zoomIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.8); /* Start very small */
+  /* Smooth Zoom-In Animation */
+  .zoom-in {
+    opacity: 0; /* Start invisible */
+    transform: scale(0.5); /* Start at a much smaller size */
+    animation: zoomIn 0.5s ease-in-out forwards; /* Adjust duration and timing function */
   }
-  100% {
-    opacity: 1;
-    transform: scale(1); /* End at normal size */
+
+  /* Keyframes for the Zoom-In Animation */
+  @keyframes zoomIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.8); /* Start very small */
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1); /* End at normal size */
+    }
   }
-}
-/* Images Section */
-.images {
-  width: 100%;
-  max-width: 430px; /* Matches the opening section width */
-  margin: 20px auto; /* Adds spacing above and below */
-  padding: 10px;
-  box-sizing: border-box;
-}
+  /* Images Section */
+  .images {
+    width: 100%;
+    max-width: 430px; /* Matches the opening section width */
+    margin: 20px auto; /* Adds spacing above and below */
+    padding: 10px;
+    box-sizing: border-box;
+  }
 
-/* Gallery Container */
-.gallery {
-  max-width: 800px; /* Adjust as needed */
-  margin: 0 auto; /* Center the gallery */
-  padding: 20px; /* Add padding around the gallery */
-  box-sizing: border-box;
-}
+  /* Gallery Container */
+  .gallery {
+    max-width: 800px; /* Adjust as needed */
+    margin: 0 auto; /* Center the gallery */
+    padding: 20px; /* Add padding around the gallery */
+    box-sizing: border-box;
+  }
 
-/* Row Styling */
-.row {
-  display: flex;
-  justify-content: center; /* Center images horizontally */
-  gap: 10px; /* Space between images in the same row */
-  margin-bottom: 20px; /* Space between rows */
-}
-
-
-/* Large Image Styling (Single Image per Row) */
-.large-image {
-  width: 100%; /* Full width of the row */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  object-fit: cover; /* Ensures the image fills the container without distortion */
-}
-
-.large-image:hover {
-  transform: scale(1.05); /* Slight zoom effect on hover */
-}
-
-/* Small Image Styling (Two Images per Row) */
-.small-image {
-  width: calc(50% - 5px); /* Two images per row with spacing */
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  object-fit: cover; /* Ensures images fill the container without distortion */
-}
-
-.small-image:hover {
-  transform: scale(1.05); /* Slight zoom effect on hover */
-}
-
-/* Lightbox Modal */
-.lightbox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.lightbox.hidden {
-  display: none; /* Hides the lightbox */
-}
-
-#lightbox-image {
-  max-width: 90%; /* Ensures the image fits within the viewport */
-  max-height: 90%; /* Prevents the image from overflowing vertically */
-  border-radius: 10px;
-  object-fit: contain; /* Ensures the image scales proportionally */
-}
-
-.close-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  color: white;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-.prev-btn, .next-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: transparent;
-  color: white;
-  font-size: 1rem;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 50%;
-}
-
-.prev-btn {
-  left: 20px;
-}
-
-.next-btn {
-  right: 20px;
-}
-
-.prev-btn:hover, .next-btn:hover {
-  transform: scale(1.05);
-}
-.payment_title{
-  padding: 10%;
-}
-/* Footer Buttons */
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 375px;
-  background-color: transparent;
-  padding: 10px 0;
-  display: flex;
-  justify-content: space-around; /* Evenly spaces buttons */
-  margin-top: 50px;
-}
+  /* Row Styling */
+  .row {
+    display: flex;
+    justify-content: center; /* Center images horizontally */
+    gap: 10px; /* Space between images in the same row */
+    margin-bottom: 20px; /* Space between rows */
+  }
 
 
+  /* Large Image Styling (Single Image per Row) */
+  .large-image {
+    width: 100%; /* Full width of the row */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    object-fit: cover; /* Ensures the image fills the container without distortion */
+  }
 
-/* Appointment Button */
-.appointment-btn {
-  padding: 5px; /* Add minimal padding around the button */
-  border-radius: 5px; /* Optional: Adds rounded corners */
-  overflow: hidden; /* Ensures content doesn't overflow */
-}
+  .large-image:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
 
-.appointment-img {
-  max-width: 100%; /* Ensures the image fits within the button */
-  height: auto; /* Maintains aspect ratio */
-  padding: 5%;
-}
+  /* Small Image Styling (Two Images per Row) */
+  .small-image {
+    width: calc(50% - 5px); /* Two images per row with spacing */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    object-fit: cover; /* Ensures images fill the container without distortion */
+  }
 
-/* Footer Buttons */
-.action-btn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px; /* Space between icon and text */
-  padding: 8px; /* Minimal padding for better sizing */
-  font-size: 0.8rem; /* Smaller font size for text */
-  color: #333;
-  background-color: transparent;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+  .small-image:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
 
-.action-btn i {
-  font-size: 1.2rem; /* Adjust icon size to fit the button */
-  color: #cca432; /* Icon color */
-}
+  /* Lightbox Modal */
+  .lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
 
-.action-btn:hover {
-  background-color: #f0f0f0; /* Light background on hover */
-}
-.map {
-  padding: 10%;
-}
+  .lightbox.hidden {
+    display: none; /* Hides the lightbox */
+  }
+
+  #lightbox-image {
+    max-width: 90%; /* Ensures the image fits within the viewport */
+    max-height: 90%; /* Prevents the image from overflowing vertically */
+    border-radius: 10px;
+    object-fit: contain; /* Ensures the image scales proportionally */
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+  }
+
+  .prev-btn {
+    left: 20px;
+  }
+
+  .next-btn {
+    right: 20px;
+  }
+
+  .prev-btn:hover, .next-btn:hover {
+    transform: scale(1.05);
+  }
+  .payment_title{
+    padding: 10%;
+  }
+  .map {
+    padding: 10%;
+  }
+  /* Footer Buttons */
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 375px;
+    background-color: transparent;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-around; /* Evenly spaces buttons */
+    margin-top: 50px;
+  }
+
+  /* Footer Buttons */
+  .action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* Space between icon and text */
+    padding: 8px; /* Minimal padding for better sizing */
+    font-size: 0.8rem; /* Smaller font size for text */
+    color: #333;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .action-btn i {
+    font-size: 1.2rem; /* Adjust icon size to fit the button */
+    color: #cca432; /* Icon color */
+  }
+
+  .action-btn:hover {
+    background-color: #f0f0f0; /* Light background on hover */
+  }
