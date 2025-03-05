@@ -72,17 +72,17 @@
     .animation_btn {
       transition: transform 0.3s ease-in-out;
       background-color: transparent; 
-      animation: pulse 1.5s infinite ease-in-out;
+      animation: pulse 2.5s infinite ease-in-out;
     }
     @keyframes pulse {
       0% {
-        transform: scale(0.9);
+        transform: scale(0.97);
       }
       50% {
         transform: scale(1);
       }
       100% {
-        transform: scale(0.9);
+        transform: scale(0.97);
       }
     }
     .appointment_btn {
