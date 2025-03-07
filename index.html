@@ -7,12 +7,16 @@
   <title>leab&nhawedding</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+  <meta property="og:title" content="Your Website Title">
+  <meta property="og:description" content="A short description of your page.">
+  <meta property="og:image" content="url('images/images1')">
+  <meta property="og:url" content="https://yourwebsite.com">
+  <meta property="og:type" content="website">
 </head>
 
 <body>
   <!-- First Page -->
-  <div id="first-page">
+  <header id="first-page">
     <div class="logo">
       <img src="images/logo.png" alt="">
     </div>
@@ -22,7 +26,7 @@
     <div class="button-container">
       <button id="start-button" class="open_btn animation_btn"></button>
     </div>
-  </div>
+  </header>
 
   <!-- Pop-up Page -->
   <div id="popup-page">
@@ -30,49 +34,43 @@
   </div>
 
   <!-- Scrollable Page -->
-  <div id="scrollable-page">
-    <div class="invite_text">
+  <main id="scrollable-page">
+    <section class="invite_text">
       <img src="images/invite_text.png" alt="" class="full-width-image zoom-in">
-    </div>
-    <div class="button-container">
+    </section>
+    <section class="button-container">
       <a href="https://calendar.app.google/Lhw5L4uFj4PU3icHA">
         <button class="appointment_btn zoom-in"></button>
       </a>
-
-    </div>
-    <div class="invite_text">
+    </section>
+    <section class="invite_text">
       <img src="images/invite_text_eng.png" alt="" class="full-width-image zoom-in">
-    </div>
-    <div class="map">
+    </section>
+    <section class="map">
       <div class="button-container">
-        <a
-          href="https://www.google.com/maps/place/%E1%9E%94%E1%9F%8A%E1%9E%BB%E1%9E%93%E1%9E%90%E1%9E%BB%E1%9E%93+%E1%9E%9F%E1%9F%84%E1%9E%97%E1%9E%B6%E1%9E%9B%E1%9E%80%E1%9F%8B%E1%9E%82%E1%9F%92%E1%9E%9A%E1%9E%BF%E1%9E%84%E1%9E%9F%E1%9F%86%E1%9E%8E%E1%9E%84%E1%9F%8B/@11.4492257,105.0592761,16.91z/data=!4m6!3m5!1s0x310be386cdaaa03f:0x85aa81688469b75a!8m2!3d11.4486771!4d105.0577957!16s%2Fg%2F11r1x7tdwy?entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D">
+        <a href="https://shorturl.at/MIezu">
           <button class="map_btn animation_btn"></button>
         </a>
       </div>
       <img src="images/qr_map.png" alt="" class="full-width-image zoom-in">
-    </div>
-    <!-- Gallery -->
-    <div class="images">
+    </section>
+    <section class="images">
       <!-- Image Gallery -->
       <div class="gallery">
         <!-- First Row: Single Large Image -->
         <div class="row">
           <img src="images/images1.png" alt="Gallery Image 1" class="large-image" onclick="openLightbox(0)">
         </div>
-
         <!-- Second Row: Two Smaller Images -->
         <div class="row">
           <img src="images/images2.png" alt="Gallery Image 2" class="small-image" onclick="openLightbox(1)">
           <img src="images/images3.png" alt="Gallery Image 3" class="small-image" onclick="openLightbox(2)">
         </div>
-
         <!-- Third Row: Single Large Image -->
         <div class="row">
           <img src="images/images4.png" alt="Gallery Image 4" class="large-image" onclick="openLightbox(3)">
         </div>
       </div>
-
       <!-- Lightbox Modal -->
       <div id="lightbox" class="lightbox hidden">
         <span class="close-btn" onclick="closeLightbox()">&times;</span>
@@ -80,8 +78,8 @@
         <button class="next-btn" onclick="changeImage(1)">&#10095;</button>
         <img src="" alt="Enlarged Image" id="lightbox-image">
       </div>
-    </div>
-    <div class="payment">
+    </section>
+    <section class="payment">
       <div class="payment_title">
         <img src="images/payment.png" alt="" class="full-width-image">
       </div>
@@ -90,9 +88,7 @@
           <button id="start-button" class="payment_btn animation_btn"></button>
         </a>
       </div>
-
-    </div>
-    <!-- Footer -->
+    </section>
     <footer class="footer">
       <button class="action-btn" onclick="openLocation()">
         <i class="fa-solid fa-location-dot"></i>
@@ -104,7 +100,7 @@
         <i class="fa-solid fa-images"></i>
       </button>
     </footer>
-  </div>
+  </main>
 
   <script>
     // JavaScript Logic
@@ -164,6 +160,18 @@
 
       const lightboxImage = document.getElementById("lightbox-image");
       lightboxImage.src = images[currentIndex];
+    }
+    // Footer Actions
+    function openLocation() {
+      window.open('https://shorturl.at/MIezu');
+    }
+
+    function addToCalendar() {
+      window.open('https://calendar.app.google/Lhw5L4uFj4PU3icHA');
+    }
+
+    function viewImage() {
+      // Implement image viewer functionality
     }
   </script>
 
