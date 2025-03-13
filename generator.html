@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Invitation Links</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        input,
+        textarea {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            width: 300px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .link-container {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .link-container a {
+            color: #007bff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Generate Personalized Invitation Links</h1>
+    <input type="text" id="singleGuestName" placeholder="Enter Guest Name">
+    <button onclick="generateLink()">Generate Single Link</button>
+
+    <h2>Or Generate Links for Multiple Guests</h2>
+    <textarea id="multipleGuestNames" rows="10" cols="50" placeholder="Enter guest names (one per line)"></textarea>
+    <button onclick="generateLinks()">Generate Links</button>
+
+    <div class="link-container" id="linkContainer"></div>
+
+    <script src="generator.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,207 @@
+/* General Styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Accessibility Improvements */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Semantic Sections */
+#welcome-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: url('images/cover.png') center/cover no-repeat;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#scrollable-page {
+  min-height: 100vh;
+  background: url('images/cover2.png') center/cover no-repeat;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Button Styles */
+.animation_btn {
+  transition: transform 0.3s ease-in-out;
+  padding-top: 33.33%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.animation_btn:hover {
+  transform: scale(1.05);
+}
+
+.animation_btn:active {
+  transform: scale(0.95);
+}
+
+/* Specific Button Variations */
+.open_btn {
+  background-image: url('images/open_btn.png');
+}
+
+.appointment_btn {
+  background-image: url('images/appointment_btn.png');
+  padding-top: 80%;
+}
+
+.map_btn {
+  background-image: url('images/map_btn.png');
+}
+
+.payment_btn {
+  background-image: url('images/payment_btn.png');
+  margin-bottom: 50px;
+}
+
+/* Image Gallery */
+.gallery {
+  margin: 20px 0;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.large-image {
+  flex: 1 1 100%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.small-image {
+  flex: 1 1 calc(50% - 5px);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#lightbox-image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  transition: opacity 0.3s;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 2rem;
+}
+
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  color: white;
+  font-size: 2rem;
+  padding: 10px;
+}
+
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.action-btn i {
+  font-size: 1.5rem;
+  color: #cca432;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .footer {
+    padding: 5px;
+  }
+  
+  .action-btn i {
+    font-size: 1.2rem;
+  }
+}
+
+/* Accessibility States */
+button:focus-visible {
+  outline: 3px solid #cca432;
+  outline-offset: 2px;
+}
+
+.lightbox-img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.zoom-in {
+  animation: zoomIn 0.5s ease-in-out forwards;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
