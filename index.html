@@ -7,13 +7,22 @@
   <!-- Use a direct, publicly accessible URL -->
   <meta property="og:title" content="Leab and Nha Wedding">
   <meta property="og:description" content="Together with our families, We hope you can join us to celebrate">
-  <meta property="og:image" content="https://i.postimg.cc/V6jXFMTc/preview.jpg">
+  <meta property="og:image" content="https://freeimage.host/i/3CCUSwv">
   <title>leab&nhawedding</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
+  <!-- Background Audio -->
+  <audio id="backgroundAudio" autoplay loop muted>
+    <source src="Eed-sheeran-perfect-instrumentalfx.mp3">
+  </audio>
   <!-- First Page -->
   <header id="first-page">
     <div class="logo">
@@ -22,7 +31,9 @@
     <div class="welcome_text">
       <img src="images/welcome_text.png" alt="">
     </div>
-    <h2 id="guestName">Guest</h2>
+    <div class="resizable-box" id="text-box">
+      <h2 id="guestName" class="guest">Guest</h2>
+    </div>
     <div class="button-container">
       <button id="start-button" class="open_btn animation_btn"></button>
     </div>
@@ -30,7 +41,7 @@
 
   <!-- Pop-up Page -->
   <div id="popup-page">
-    <img src="images/opening_img.jpg" alt="">
+    <img src="images/opening_img.png" alt="">
   </div>
 
   <!-- Scrollable Page -->
@@ -86,6 +97,21 @@
           <img src="images/images8.png" alt="Gallery Image 8" class="large-image" onclick="openLightbox(7)">
         </div>
       </div>
+      <div class="gallery">
+        <!-- First Row: Single Large Image -->
+        <div class="row">
+          <img src="images/images9.png" alt="Gallery Image 5" class="large-image" onclick="openLightbox(8)">
+        </div>
+        <!-- Second Row: Two Smaller Images -->
+        <div class="row">
+          <img src="images/images10.png" alt="Gallery Image 6" class="small-image" onclick="openLightbox(9)">
+          <img src="images/images11.png" alt="Gallery Image 7" class="small-image" onclick="openLightbox(10)">
+        </div>
+        <!-- Third Row: Single Large Image -->
+        <div class="row">
+          <img src="images/images12.png" alt="Gallery Image 8" class="large-image" onclick="openLightbox(11)">
+        </div>
+      </div>
       <!-- Lightbox Modal -->
       <div id="lightbox" class="lightbox hidden">
         <span class="close-btn" onclick="closeLightbox()">&times;</span>
@@ -97,13 +123,28 @@
     <section class="payment">
       <div class="payment_title">
         <img src="images/payment.png" alt="" class="full-width-image">
+        <img src="images/qr_payment.png" alt="" class="full-width-image">
       </div>
       <div class="button-container">
-        <a href="https://pay.ababank.com/AtGayxW3z57mejm37">
+        <a href="https://pay.ababank.com/ZL2ra3QwCceCYLXL7">
           <button id="start-button" class="payment_btn animation_btn"></button>
         </a>
       </div>
     </section>
+    <div class="contact">
+      <img src="images/invitely_logo.png" alt="" class="full-width-image">
+      <div class="social_media">
+        <button class="action-btn" onclick="openTelegram()">
+          <i class="fa-brands fa-telegram"></i>
+        </button>
+        <button class="action-btn" onclick="openInstagram()">
+          <i class="fa-brands fa-instagram"></i>
+        </button>
+        <button class="action-btn" onclick="openTiktok()">
+          <i class="fa-brands fa-tiktok"></i>
+        </button>
+      </div>
+    </div>
     <footer class="footer">
       <button class="action-btn" onclick="openLocation()">
         <i class="fa-solid fa-location-dot"></i>
@@ -116,106 +157,7 @@
       </button>
     </footer>
   </main>
-
-  <script>
-    // JavaScript Logic
-    const firstPage = document.getElementById('first-page');
-    const popupPage = document.getElementById('popup-page');
-    const scrollablePage = document.getElementById('scrollable-page');
-
-    document.getElementById('start-button').addEventListener('click', () => {
-      // Hide the first page
-      firstPage.style.display = 'none';
-
-      // Show the pop-up page
-      popupPage.style.display = 'flex';
-
-      // After 3 seconds, hide the pop-up page and show the scrollable page
-      setTimeout(() => {
-        popupPage.style.display = 'none';
-        scrollablePage.style.display = 'block';
-      }, 1000); // 1000ms = 1 seconds
-    });
-    // Image Array
-    const images = [
-      "images/images1.png",
-      "images/images2.png",
-      "images/images3.png",
-      "images/images4.png",
-      "images/images5.png",
-      "images/images6.png",
-      "images/images7.png",
-      "images/images8.png"
-    ];
-
-    let currentIndex = 0;
-
-    // Open Lightbox
-    function openLightbox(index) {
-      currentIndex = index;
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImage = document.getElementById("lightbox-image");
-
-      lightboxImage.src = images[currentIndex];
-      lightbox.classList.remove("hidden");
-    }
-
-    // Close Lightbox
-    function closeLightbox() {
-      const lightbox = document.getElementById("lightbox");
-      lightbox.classList.add("hidden");
-    }
-
-    // Change Image
-    function changeImage(step) {
-      currentIndex += step;
-
-      // Ensure currentIndex stays within bounds
-      if (currentIndex < 0) {
-        currentIndex = images.length - 1;
-      } else if (currentIndex >= images.length) {
-        currentIndex = 0;
-      }
-
-      const lightboxImage = document.getElementById("lightbox-image");
-      lightboxImage.src = images[currentIndex];
-    }
-    // Footer Actions
-    function openLocation() {
-      window.open('https://shorturl.at/MIezu');
-    }
-
-    function addToCalendar() {
-      window.open('https://calendar.app.google/Lhw5L4uFj4PU3icHA');
-    }
-
-    function viewImage() {
-      // Implement image viewer functionality
-    }
-
-    // script.js
-    document.addEventListener('DOMContentLoaded', () => {
-      // Get the query string from the URL
-      const queryString = window.location.search;
-
-      // Parse the query string into an object
-      const urlParams = new URLSearchParams(queryString);
-
-      // Extract the 'name' parameter
-      const guestName = urlParams.get('name');
-
-      // Find the placeholder element in the HTML
-      const namePlaceholder = document.getElementById('guestName');
-
-      // Replace the placeholder with the guest's name
-      if (guestName && guestName.trim() !== "") {
-        namePlaceholder.textContent = decodeURIComponent(guestName); // Decode URL-encoded characters
-      } else {
-        namePlaceholder.textContent = "Guest"; // Default if no name is provided
-      }
-    });
-  </script>
-
+  <script src="script.js"></script>
 </body>
 
 </html>

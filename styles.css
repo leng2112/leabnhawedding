@@ -1,393 +1,405 @@
-    /* General Styling */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      overflow: hidden; /* Disable scrolling initially */
-      width: 375px; /* Set the width to match the mobile viewport */
-      margin: 0 auto; /* Center the content horizontally */
-      overflow-x: hidden; /* Prevent horizontal scrolling */
-    }
-    
-    html {
-      overflow-y: auto; /* Allow vertical scrolling if needed */
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  width: 375px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
 
-    /* First Page Styling */
-    #first-page {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 100vh;
-      background-image: url('images/cover.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      border: none;
-      text-align: center;
-    }
-    .logo {
-      width: 100%; /* Fixed width */
-      max-width: 300px;
-      height: auto; /* Fixed height */
-      overflow: hidden; /* Prevent overflow */
-      border-radius: 10px; /* Optional: Add rounded corners */
-    }
-    
-    .logo img {
-      width: 100%; /* Fill the container's width */
-      height: 100%; /* Fill the container's height */
-      object-fit: cover; /* Ensures the image covers the container */
-      display: block; /* Removes extra space below the image */
-    }
-    .welcome_text {
-      width: 100%; /* Fixed width */
-      max-width: 300px;
-      overflow: hidden; /* Prevent overflow */
-      border-radius: 10px; /* Optional: Add rounded corners */
-    }
-    
-    .welcome_text img {
-      width: 100%; /* Fill the container's width */
-      height: 100%; /* Fill the container's height */
-      object-fit: cover; /* Ensures the image covers the container */
-      display: block; /* Removes extra space below the image */
-    }
-    .button-container {
-      width: 100%;
-      max-width: 300px; /* Optional: Limit width for larger screens */
-      margin: 0 auto; /* Center the container */
-    }
-    
-    .open_btn {
-      width: 100%;
-      height: auto;
-      padding-top: 33.33%; /* Aspect ratio (3:1) */
-      background-image: url('images/open_btn.png');
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-      border: none;
-      cursor: pointer;
-    }
-    .animation_btn {
-      transition: transform 0.3s ease-in-out;
-      background-color: transparent; 
-      animation: pulse 2.5s infinite ease-in-out;
-    }
-    @keyframes pulse {
-      0% {
-        transform: scale(0.97);
-      }
-      50% {
-        transform: scale(1);
-      }
-      100% {
-        transform: scale(0.97);
-      }
-    }
-    /* Pop-up Page Styling */
-    #popup-page {
-      display: none;
-      position: relative; /* Needed for full-screen image */
-      width: 100vw; /* Full viewport width */
-      height: 100vh; /* Full viewport height */
-      overflow: hidden; /* Prevent scrolling */
-    }
+html {
+  overflow-y: auto;
+}
 
-    /* Image Styling */
-    #popup-page img {
-      position: absolute; /* Position the image absolutely within the pop-up */
-      top: 50%; /* Center vertically */
-      left: 50%; /* Center horizontally */
-      transform: translate(-50%, -50%); /* Adjust for exact centering */
-      width: 100vw; /* Full viewport width */
-      height: 100vh; /* Full viewport height */
-      object-fit: cover; /* Cover the entire screen without distortion */
-    }
-    /* Pop-up Page Styling */
-    #popup-page {
-      display: none;
-      position: relative; /* Needed for full-screen image */
-      width: 100vw; /* Full viewport width */
-      height: 100vh; /* Full viewport height */
-      overflow: hidden; /* Prevent scrolling */
-    }
+#first-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-image: url('images/cover.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  text-align: center;
+}
 
-    /* Image Styling */
-    #popup-page img {
-      position: absolute; /* Position the image absolutely within the pop-up */
-      top: 50%; /* Center vertically */
-      left: 50%; /* Center horizontally */
-      transform: translate(-50%, -50%); /* Adjust for exact centering */
-      width: 100vw; /* Full viewport width */
-      height: 100vh; /* Full viewport height */
-      object-fit: cover; /* Cover the entire screen without distortion */
-    }
+.logo {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
 
-    .appointment_btn {
-      width: 100%;
-      height: auto;
-      padding-top: 80%; /* Aspect ratio (3:1) */
-      background-image: url('images/appointment_btn.png');
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.3s ease-in-out;
-      background-color: transparent; 
-    }
-        /* Appointment Button */
-    .appointment-btn {
-      padding: 5px; /* Add minimal padding around the button */
-      border-radius: 5px; /* Optional: Adds rounded corners */
-      overflow: hidden; /* Ensures content doesn't overflow */
-    }
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-    .appointment-img {
-      max-width: 100%; /* Ensures the image fits within the button */
-      height: auto; /* Maintains aspect ratio */
-      padding: 5%;
-    }
-    
-    .map_btn{
-      width: 100%;
-      height: auto;
-      padding-top: 33.33%; /* Aspect ratio (3:1) */
-      background-image: url('images/map_btn.png');
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.3s ease-in-out;
-      background-color: transparent; 
-    }
-    .payment_btn{
-      width: 100%;
-      height: auto;
-      padding-top: 33.33%; /* Aspect ratio (3:1) */
-      background-image: url('images/payment_btn.png');
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.3s ease-in-out;
-      background-color: transparent; 
-      margin-bottom: 50px;
-    }
-    
-    .image-button-bg:hover {
-      transform: scale(1.1);
-    }
-    
-    .image-button-bg:active {
-      transform: scale(0.95);
-    }
+.welcome_text {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+}
 
-    .appointment_btn:hover {
-      transform: scale(1.1);
-    }
-    
-    .appointment_btn:active {
-      transform: scale(0.95);
-    }
-    .map_btn:hover {
-      transform: scale(1.1);
-    }
-    
-    .map_btn:active {
-      transform: scale(0.95);
-    }
+.welcome_text img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-    /* Scrollable Page Styling */
-    #scrollable-page {
-      display: none;
-      height: 100vh; /* Make it scrollable */
-      background-image: url('images/cover2.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      border: none;
-      overflow-y: auto; /* Enable scrolling */
-      padding-bottom: 20px;
+.button-container {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
 
-    }
-    #scrollable-page .full-width-image {
-      width: 100%; /* Fill the container's width */
-      height: auto; /* Maintain aspect ratio */
-      object-fit: cover; /* Ensures the image covers the container */
-      display: block; /* Removes extra space below the image */
-    }
-  /* Smooth Zoom-In Animation */
-  .zoom-in {
-    opacity: 0; /* Start invisible */
-    transform: scale(0.5); /* Start at a much smaller size */
-    animation: zoomIn 0.5s ease-in-out forwards; /* Adjust duration and timing function */
+.open_btn {
+  width: 100%;
+  height: auto;
+  padding-top: 33.33%;
+  background-image: url('images/open_btn.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+.animation_btn {
+  transition: transform 0.3s ease-in-out;
+  background-color: transparent;
+  animation: pulse 2.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.97);
   }
 
-  /* Keyframes for the Zoom-In Animation */
-  @keyframes zoomIn {
-    0% {
-      opacity: 0;
-      transform: scale(0.8); /* Start very small */
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1); /* End at normal size */
-    }
-  }
-  /* Images Section */
-  .images {
-    width: 100%;
-    max-width: 430px; /* Matches the opening section width */
-    margin: 20px auto; /* Adds spacing above and below */
-    padding: 10px;
-    box-sizing: border-box;
+  50% {
+    transform: scale(1);
   }
 
-  /* Gallery Container */
-  .gallery {
-    max-width: 800px; /* Adjust as needed */
-    margin: 0 auto; /* Center the gallery */
-    padding: 20px; /* Add padding around the gallery */
-    box-sizing: border-box;
+  100% {
+    transform: scale(0.97);
+  }
+}
+
+#popup-page {
+  display: none;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#popup-page img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.appointment_btn {
+  width: 100%;
+  height: auto;
+  padding-top: 80%;
+  background-image: url('images/appointment_btn.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  background-color: transparent;
+}
+
+.appointment-btn {
+  padding: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.appointment-img {
+  max-width: 100%;
+  height: auto;
+  padding: 5%;
+}
+
+.map_btn {
+  width: 100%;
+  height: auto;
+  padding-top: 33.33%;
+  background-image: url('images/map_btn.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  background-color: transparent;
+}
+
+.payment_btn {
+  width: 100%;
+  height: auto;
+  padding-top: 33.33%;
+  background-image: url('images/payment_btn.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  background-color: transparent;
+  margin-bottom: 50px;
+}
+
+.image-button-bg:hover {
+  transform: scale(1.1);
+}
+
+.image-button-bg:active {
+  transform: scale(0.95);
+}
+
+.appointment_btn:hover {
+  transform: scale(1.1);
+}
+
+.appointment_btn:active {
+  transform: scale(0.95);
+}
+
+.map_btn:hover {
+  transform: scale(1.1);
+}
+
+.map_btn:active {
+  transform: scale(0.95);
+}
+
+#scrollable-page {
+  display: none;
+  height: 100vh;
+  background-image: url('images/cover2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+
+#scrollable-page .full-width-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.zoom-in {
+  opacity: 0;
+  transform: scale(0.5);
+  animation: zoomIn 0.5s ease-in-out forwards;
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
   }
 
-  /* Row Styling */
-  .row {
-    display: flex;
-    justify-content: center; /* Center images horizontally */
-    gap: 10px; /* Space between images in the same row */
-    margin-bottom: 20px; /* Space between rows */
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
+}
 
+.images {
+  width: 100%;
+  max-width: 430px;
+  margin: 20px auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
 
-  /* Large Image Styling (Single Image per Row) */
-  .large-image {
-    width: 100%; /* Full width of the row */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    object-fit: cover; /* Ensures the image fills the container without distortion */
-  }
+.gallery {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
 
-  .large-image:hover {
-    transform: scale(1.05); /* Slight zoom effect on hover */
-  }
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
 
-  /* Small Image Styling (Two Images per Row) */
-  .small-image {
-    width: calc(50% - 5px); /* Two images per row with spacing */
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    object-fit: cover; /* Ensures images fill the container without distortion */
-  }
+.large-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  object-fit: cover;
+}
 
-  .small-image:hover {
-    transform: scale(1.05); /* Slight zoom effect on hover */
-  }
+.large-image:hover {
+  transform: scale(1.05);
+}
 
-  /* Lightbox Modal */
-  .lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
+.small-image {
+  width: calc(50% - 5px);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  object-fit: cover;
+}
 
-  .lightbox.hidden {
-    display: none; /* Hides the lightbox */
-  }
+.small-image:hover {
+  transform: scale(1.05);
+}
 
-  #lightbox-image {
-    max-width: 90%; /* Ensures the image fits within the viewport */
-    max-height: 90%; /* Prevents the image from overflowing vertically */
-    border-radius: 10px;
-    object-fit: contain; /* Ensures the image scales proportionally */
-  }
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
 
-  .close-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-  }
+.lightbox.hidden {
+  display: none;
+}
 
-  .prev-btn, .next-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: transparent;
-    color: white;
-    font-size: 1rem;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 50%;
-  }
+#lightbox-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  object-fit: contain;
+}
 
-  .prev-btn {
-    left: 20px;
-  }
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
 
-  .next-btn {
-    right: 20px;
-  }
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+}
 
-  .prev-btn:hover, .next-btn:hover {
-    transform: scale(1.05);
-  }
-  .payment_title{
-    padding: 10%;
-  }
-  .map {
-    padding: 10%;
-  }
-  /* Footer Buttons */
-  .footer {
-    position: fixed;
-    bottom: 0;
-    width: 375px;
-    background-color: transparent;
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-around; /* Evenly spaces buttons */
-    margin-top: 50px;
-  }
+.prev-btn {
+  left: 20px;
+}
 
-  /* Footer Buttons */
-  .action-btn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px; /* Space between icon and text */
-    padding: 8px; /* Minimal padding for better sizing */
-    font-size: 0.8rem; /* Smaller font size for text */
-    color: #333;
-    background-color: transparent;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
+.next-btn {
+  right: 20px;
+}
 
-  .action-btn i {
-    font-size: 1.2rem; /* Adjust icon size to fit the button */
-    color: #cca432; /* Icon color */
-  }
+.prev-btn:hover,
+.next-btn:hover {
+  transform: scale(1.05);
+}
 
-  .action-btn:hover {
-    background-color: #f0f0f0; /* Light background on hover */
-  }
+.payment_title {
+  padding: 10%;
+}
+
+.map {
+  padding: 10%;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 375px;
+  background-color: transparent;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 8px;
+  font-size: 0.8rem;
+  color: #333;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.action-btn i {
+  font-size: 1.2rem;
+  color: #cca432;
+}
+
+.action-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.resizable-box {
+  width: 80%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+}
+
+.guest {
+  font-size: clamp(16px, 5vw, 48px);
+  white-space: normal;
+  word-wrap: break-word;
+  max-width: 100%;
+  line-height: 1.2;
+  margin: 0;
+  color: #a57c52;
+}
+
+.contact {
+  margin-bottom: 100px;
+  padding: 10%;
+}
+
+.contact .social_media {
+  display: flex;
+  justify-content: center;
+}

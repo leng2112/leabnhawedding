@@ -15,7 +15,7 @@ function generateLink() {
     const encodedName = encodeURIComponent(guestName);
   
     // Base URL of your wedding invitation website
-    const baseUrl = "https://leng2112.github.io/leabnhawedding/name=";
+    const baseUrl = "https://leabnhawedding.com";
   
     // Generate the personalized link
     const invitationLink = baseUrl + encodedName;
@@ -39,7 +39,7 @@ function generateLink() {
     }
   
     // Base URL of your wedding invitation website
-    const baseUrl = "https://leng2112.github.io/leabnhawedding/name=";
+    const baseUrl = "https://leabnhawedding.com/name=";
   
     // Generate links for each guest
     const linksHtml = validNames.map(name => {
